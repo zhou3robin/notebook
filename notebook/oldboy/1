@@ -1,0 +1,9 @@
+只要档案比file文件新，都会被列出来find /root/data/ -type f -exec rm -f {} \;
+find /root/data/ -type f|xargs rm -f    #删除目录下所有类型为文件的文件，以上两种都可以       
+find /root/data/ -type f  ! -name "a.txt" | xargs rm -f     #除了a.txt，目录下其他文件都删除
+find /oldboy -maxdepth 1 -type d ! -name "oldboy"       
+    #maxdepth 深度，查找oldboy下的一级目录
+    #mtime 被modify过的档案
+    #atime 被access过的档案
+    #ctime 被change过状态的档案
+    #newer file 
